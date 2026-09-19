@@ -1,0 +1,9 @@
+api/src
+api/dist
+api/prisma
+docker
+docs
+android
+electron
+integrations
+press
