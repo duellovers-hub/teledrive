@@ -37,12 +37,24 @@
   ],
   "routes": [
     {
+      "src": "/api/api/(.*)",
+      "dest": "api/dist/index.js"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "api/dist/index.js"
     },
     {
       "src": "/static/(.*)",
       "dest": "web/build/static/$1"
+    },
+    {
+      "src": "/app.css",
+      "dest": "web/build/app.css"
+    },
+    {
+      "src": "/app.dark.css",
+      "dest": "web/build/app.dark.css"
     },
     {
       "src": "/favicon.ico",
