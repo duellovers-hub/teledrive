@@ -1,5 +1,5 @@
 {
-  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false yarn workspace web build",
+  "buildCommand": "CI=false NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false yarn workspace web build",
   "outputDirectory": "web/build",
   "rewrites": [
     {
