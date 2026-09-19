@@ -37,16 +37,28 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "api/dist/index.js"
     },
     {
-      "src": "/",
-      "dest": "web/build/index.html"
+      "src": "/static/(.*)",
+      "dest": "web/build/static/$1"
     },
     {
-      "src": "/(.+)",
-      "dest": "web/build/$1"
+      "src": "/favicon.ico",
+      "dest": "web/build/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "web/build/manifest.json"
+    },
+    {
+      "src": "/logo(.*)",
+      "dest": "web/build/logo$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "web/build/index.html"
     }
   ]
 }
