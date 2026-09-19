@@ -1,76 +1,10 @@
 {
-  "version": 2,
-  "env": {},
-  "builds": [
+  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false yarn workspace web build",
+  "outputDirectory": "web/build",
+  "rewrites": [
     {
-      "src": "api/dist/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["api/dist/**"],
-        "excludeFiles": [
-          "web/**",
-          "android/**",
-          "docs/**",
-          "docker/**",
-          "press/**",
-          "electron/**",
-          "integrations/**"
-        ]
-      }
-    },
-    {
-      "src": "web/build/**",
-      "use": "@vercel/static",
-      "config": {
-        "includeFiles": ["web/build/**"],
-        "excludeFiles": [
-          "api/**",
-          "android/**",
-          "docs/**",
-          "docker/**",
-          "press/**",
-          "electron/**",
-          "integrations/**"
-        ]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/api/(.*)",
-      "dest": "api/dist/index.js"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "api/dist/index.js"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "web/build/static/$1"
-    },
-    {
-      "src": "/app.css",
-      "dest": "web/build/app.css"
-    },
-    {
-      "src": "/app.dark.css",
-      "dest": "web/build/app.dark.css"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "web/build/favicon.ico"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "web/build/manifest.json"
-    },
-    {
-      "src": "/logo(.*)",
-      "dest": "web/build/logo$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "web/build/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
